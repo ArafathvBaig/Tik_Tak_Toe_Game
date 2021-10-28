@@ -478,5 +478,15 @@ public class TicTacToeGame
 		obj1.choose();
 		obj1.showBoard();
 		obj1.toss();
+		Scanner sc=new Scanner(System.in);
+		char option = sc.next().charAt(0);
+		while(option=='y')
+		{
+			obj1.newBoard();
+			obj1.choose();
+			obj1.showBoard();
+			obj1.toss();
+			option = sc.next().charAt(0);
+		}
 	}
 }
