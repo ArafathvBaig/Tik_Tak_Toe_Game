@@ -403,6 +403,33 @@ public class TicTacToeGame
 		}
 		else 
 		{
+			cornerMove();
+		}
+	}
+	public void cornerMove()
+	{
+		if(board[1]==' ')
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if(board[3]==' ')
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if(board[7]==' ')
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else if(board[9]==' ')
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else
+		{
 			board[location]=computer;
 		}
 	}
