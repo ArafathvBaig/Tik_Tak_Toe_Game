@@ -73,6 +73,7 @@ public class TicTacToeGame
 			playerMove_1();
 		}
 		showBoard();
+		winner();
 	}
 	public void computerMove_1()
 	{
@@ -80,7 +81,7 @@ public class TicTacToeGame
 		location();
 		if(flag==0)
 		{
-			board[location]=computer;
+			computerWinMove();
 		}
 		else
 		{
@@ -88,6 +89,7 @@ public class TicTacToeGame
 			computerMove_1();
 		}
 		showBoard();
+		winner();
 	}
 	public void toss()
 	{
@@ -97,13 +99,11 @@ public class TicTacToeGame
 		{
 			System.out.println("Player Starts First");
 			playerMove_1();
-			winner();
 		}
 		else
 		{
 			System.out.println("Computer Starts First");
 			computerMove_1();
-			winner();
 		}		
 	}
 	public void winner()
@@ -150,6 +150,133 @@ public class TicTacToeGame
 		else
 		{
 			playerMove_1();
+		}
+	}
+	public void computerWinMove()
+	{
+		if((board[1]==' ') && (board[2]==computer) && (board[3]==computer)) 
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if((board[1]==computer) && (board[2]==' ') && (board[3]==computer))
+		{
+			board[2]=computer;
+			location=2;
+		}
+		else if((board[1]==computer) && (board[2]==computer) && (board[3]==' '))
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if((board[4]==' ') && (board[5]==computer) && (board[6]==computer))
+		{
+			board[4]=computer;
+			location=4;
+		}
+		else if((board[4]==computer) && (board[5]==' ') && (board[6]==computer))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[4]==computer) && (board[5]==computer) && (board[6]==' '))
+		{
+			board[6]=computer;
+			location=6;
+		}
+		else if((board[7]==' ') && (board[8]==computer) && (board[9]==computer))
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else if((board[7]==computer) && (board[8]==' ') && (board[9]==computer))
+		{
+			board[8]=computer;
+			location=8;
+		}
+		else if((board[7]==computer) && (board[8]==computer) && (board[9]==' '))
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else if((board[1]==' ') && (board[4]==computer) && (board[7]==computer))
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if((board[1]==computer) && (board[4]==' ') && (board[7]==computer))
+		{
+			board[4]=computer;
+			location=4;
+		}
+		else if((board[1]==computer) && (board[4]==computer) && (board[7]==' '))
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else if((board[2]==' ') && (board[5]==computer) && (board[8]==computer))
+		{
+			board[2]=computer;
+			location=2;
+		}
+		else if((board[2]==computer) && (board[5]==' ') && (board[8]==computer))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[2]==computer) && (board[5]==computer) && (board[8]==' '))
+		{
+			board[8]=computer;
+			location=8;
+		}
+		else if ((board[3]==' ') && (board[6]==computer) && (board[9]==computer))
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if((board[3]==computer) && (board[6]==' ') && (board[9]==computer))
+		{
+			board[6]=computer;
+			location=6;
+		}
+		else if((board[3]==computer) && (board[6]==computer) && (board[9]==' '))
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else if((board[1]==' ') && (board[5]==computer) && (board[9]==computer))
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if((board[1]==computer) && (board[5]==' ') && (board[9]==computer))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[1]==computer) && (board[5]==computer) && (board[9]==' '))
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else if((board[3]==' ') && (board[5]==computer) && (board[7]==computer))
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if((board[3]==computer) && (board[5]==' ') && (board[7]==computer))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[3]==computer) && (board[5]==computer) && (board[7]==' '))
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else 
+		{
+			board[location]=computer;
 		}
 	}
 	public static void main(String[] args)
