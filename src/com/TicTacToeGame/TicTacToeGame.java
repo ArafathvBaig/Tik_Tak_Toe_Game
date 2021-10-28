@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class TicTacToeGame 
 {
+	public static int PLAYER_TOSS=0;
+	public static int COMPUTER_TOSS=1;
+	int tossCheck;
 	char[] board = new char[10];
 	char player;
 	char computer;
@@ -15,6 +18,7 @@ public class TicTacToeGame
 		for(int i=1; i<board.length; i++)
 		{
 			board[i]=' ';
+			System.out.println(board[i]);
 		}
 	}
 	public void choose()
@@ -42,8 +46,6 @@ public class TicTacToeGame
 	}
 	public void location()
 	{
-		Scanner sc=new Scanner(System.in);
-		location=sc.nextInt();
 		if((location>=1) && (location<=9))
 		{
 			if(board[location]==' ')
@@ -58,6 +60,8 @@ public class TicTacToeGame
 	}
 	public void playerMove_1()
 	{
+		Scanner sc=new Scanner(System.in);
+		location=sc.nextInt();
 		location();
 		if(flag==0)
 		{
@@ -65,9 +69,40 @@ public class TicTacToeGame
 		}
 		else
 		{
-			board[location]=' ';
+			board[location]=board[location];
+			playerMove_1();
 		}
 		showBoard();
+	}
+	public void computerMove_1()
+	{
+		location = ((int) (Math.random()*10)%9)+1;
+		location();
+		if(flag==0)
+		{
+			board[location]=computer;
+		}
+		else
+		{
+			board[location]=board[location];
+			computerMove_1();
+		}
+		showBoard();
+	}
+	public void toss()
+	{
+		tossCheck=(int) (Math.random()*10)%2;
+		System.out.println("Toss is: "+tossCheck);
+		if(tossCheck==PLAYER_TOSS)
+		{
+			System.out.println("Player Starts First");
+			playerMove_1();
+		}
+		else
+		{
+			System.out.println("Computer Starts First");
+			computerMove_1();
+		}		
 	}
 	public static void main(String[] args)
 	{
@@ -75,6 +110,6 @@ public class TicTacToeGame
 		obj1.newBoard();
 		obj1.choose();
 		obj1.showBoard();
-		obj1.playerMove_1();
+		obj1.toss();
 	}
 }
