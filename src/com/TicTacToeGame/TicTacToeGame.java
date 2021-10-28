@@ -430,6 +430,44 @@ public class TicTacToeGame
 		}
 		else
 		{
+			centreMove();
+		}
+	}
+	public void centreMove()
+	{
+		if(board[5]==' ')
+		{
+			board[5]=computer;
+		}
+		else
+		{
+			sideMove();
+		}
+	}
+	public void sideMove()
+	{
+		if(board[2]==' ')
+		{
+			board[2]=computer;
+			location=2;
+		}
+		else if(board[4]==' ')
+		{
+			board[4]=computer;
+			location=4;
+		}
+		else if(board[6]==' ')
+		{
+			board[6]=computer;
+			location=6;
+		}
+		else if(board[8]==' ')
+		{
+			board[8]=computer;
+			location=8;
+		}
+		else
+		{
 			board[location]=computer;
 		}
 	}
