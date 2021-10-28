@@ -9,6 +9,7 @@ public class TicTacToeGame
 	char computer;
 	char choice;
 	int location;
+	int flag=0;
 	public void newBoard()
 	{
 		for(int i=1; i<board.length; i++)
@@ -41,7 +42,6 @@ public class TicTacToeGame
 	}
 	public void location()
 	{
-		int flag=0;
 		Scanner sc=new Scanner(System.in);
 		location=sc.nextInt();
 		if((location>=1) && (location<=9))
@@ -56,12 +56,25 @@ public class TicTacToeGame
 			}
 		}
 	}
+	public void playerMove_1()
+	{
+		location();
+		if(flag==0)
+		{
+			board[location]=player;
+		}
+		else
+		{
+			board[location]=' ';
+		}
+		showBoard();
+	}
 	public static void main(String[] args)
 	{
 		TicTacToeGame obj1=new TicTacToeGame();
 		obj1.newBoard();
 		obj1.choose();
 		obj1.showBoard();
-		obj1.location();
+		obj1.playerMove_1();
 	}
 }
