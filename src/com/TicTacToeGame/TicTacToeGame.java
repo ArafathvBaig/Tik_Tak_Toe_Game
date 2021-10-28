@@ -276,6 +276,133 @@ public class TicTacToeGame
 		}
 		else 
 		{
+			playerWinMove();
+		}
+	}
+	public void playerWinMove()
+	{
+		if((board[1]==' ') && (board[2]==player) && (board[3]==player)) 
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if((board[1]==player) && (board[2]==' ') && (board[3]==player))
+		{
+			board[2]=computer;
+			location=2;
+		}
+		else if((board[1]==player) && (board[2]==player) && (board[3]==' '))
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if((board[4]==' ') && (board[5]==player) && (board[6]==player))
+		{
+			board[4]=computer;
+			location=4;
+		}
+		else if((board[4]==player) && (board[5]==' ') && (board[6]==player))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[4]==player) && (board[5]==player) && (board[6]==' '))
+		{
+			board[6]=computer;
+			location=6;
+		}
+		else if((board[7]==' ') && (board[8]==player) && (board[9]==player))
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else if((board[7]==player) && (board[8]==' ') && (board[9]==player))
+		{
+			board[8]=computer;
+			location=8;
+		}
+		else if((board[7]==player) && (board[8]==player) && (board[9]==' '))
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else if((board[1]==' ') && (board[4]==player) && (board[7]==player))
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if((board[1]==player) && (board[4]==' ') && (board[7]==player))
+		{
+			board[4]=computer;
+			location=4;
+		}
+		else if((board[1]==player) && (board[4]==player) && (board[7]==' '))
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else if((board[2]==' ') && (board[5]==player) && (board[8]==player))
+		{
+			board[2]=computer;
+			location=2;
+		}
+		else if((board[2]==player) && (board[5]==' ') && (board[8]==player))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[2]==player) && (board[5]==player) && (board[8]==' '))
+		{
+			board[8]=computer;
+			location=8;
+		}
+		else if ((board[3]==' ') && (board[6]==player) && (board[9]==player))
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if((board[3]==player) && (board[6]==' ') && (board[9]==player))
+		{
+			board[6]=computer;
+			location=6;
+		}
+		else if((board[3]==player) && (board[6]==player) && (board[9]==' '))
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else if((board[1]==' ') && (board[5]==player) && (board[9]==player))
+		{
+			board[1]=computer;
+			location=1;
+		}
+		else if((board[1]==player) && (board[5]==' ') && (board[9]==player))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[1]==player) && (board[5]==player) && (board[9]==' '))
+		{
+			board[9]=computer;
+			location=9;
+		}
+		else if((board[3]==' ') && (board[5]==player) && (board[7]==player))
+		{
+			board[3]=computer;
+			location=3;
+		}
+		else if((board[3]==player) && (board[5]==' ') && (board[7]==player))
+		{
+			board[5]=computer;
+			location=5;
+		}
+		else if((board[3]==player) && (board[5]==player) && (board[7]==' '))
+		{
+			board[7]=computer;
+			location=7;
+		}
+		else 
+		{
 			board[location]=computer;
 		}
 	}
