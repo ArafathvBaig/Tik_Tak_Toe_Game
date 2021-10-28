@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class TicTacToeGame 
 {
-	char board[] = new char[10];
+	char[] board = new char[10];
 	char player;
 	char computer;
 	char choice;
+	int location;
 	public void newBoard()
 	{
 		for(int i=1; i<board.length; i++)
@@ -38,11 +39,29 @@ public class TicTacToeGame
 		System.out.println("--------");
 		System.out.println(board[7]+" |"+board[8]+" |"+board[9]);
 	}
+	public void location()
+	{
+		int flag=0;
+		Scanner sc=new Scanner(System.in);
+		location=sc.nextInt();
+		if((location>=1) && (location<=9))
+		{
+			if(board[location]==' ')
+			{
+				flag=0;
+			}
+			else
+			{
+				flag=1;
+			}
+		}
+	}
 	public static void main(String[] args)
 	{
 		TicTacToeGame obj1=new TicTacToeGame();
 		obj1.newBoard();
 		obj1.choose();
 		obj1.showBoard();
+		obj1.location();
 	}
 }
