@@ -97,12 +97,60 @@ public class TicTacToeGame
 		{
 			System.out.println("Player Starts First");
 			playerMove_1();
+			winner();
 		}
 		else
 		{
 			System.out.println("Computer Starts First");
 			computerMove_1();
+			winner();
 		}		
+	}
+	public void winner()
+	{
+		if(((board[1]==player) && (board[2]==player) && (board[3]==player)) || 
+		   ((board[4]==player) && (board[5]==player) && (board[6]==player)) || 
+		   ((board[7]==player) && (board[8]==player) && (board[9]==player)) || 
+		   ((board[1]==player) && (board[4]==player) && (board[7]==player)) ||
+		   ((board[2]==player) && (board[5]==player) && (board[8]==player)) || 
+		   ((board[3]==player) && (board[6]==player) && (board[9]==player)) || 
+		   ((board[1]==player) && (board[5]==player) && (board[9]==player)) || 
+		   ((board[3]==player) && (board[5]==player) && (board[7]==player)) )
+		{
+			System.out.println("Player is the Winner.");
+		}
+		else if(((board[1]==computer) && (board[2]==computer) && (board[3]==computer)) || 
+				((board[4]==computer) && (board[5]==computer) && (board[6]==computer)) || 
+				((board[7]==computer) && (board[8]==computer) && (board[9]==computer)) || 
+				((board[1]==computer) && (board[4]==computer) && (board[7]==computer)) ||
+				((board[2]==computer) && (board[5]==computer) && (board[8]==computer)) || 
+				((board[3]==computer) && (board[6]==computer) && (board[9]==computer)) || 
+				((board[1]==computer) && (board[5]==computer) && (board[9]==computer)) ||
+				((board[3]==computer) && (board[5]==computer) && (board[7]==computer)) )
+		{
+			System.out.println("Computer is the Winner.");	
+		}
+		else if((board[1]!=' ') && (board[2]!=' ') && (board[3]!=' ') && 
+		        (board[4]!=' ') && (board[5]!=' ') && (board[6]!=' ') && 
+		        (board[7]!=' ') && (board[8]!=' ') && (board[9]!=' '))
+		{
+			System.out.println("It's a Tie");
+		}
+		else
+		{
+			nextMove();
+		}
+	}
+	public void nextMove()
+	{
+		if(board[location]==player)
+		{
+			computerMove_1();
+		}
+		else
+		{
+			playerMove_1();
+		}
 	}
 	public static void main(String[] args)
 	{
